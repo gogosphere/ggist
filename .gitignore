@@ -1,0 +1,6 @@
+src/
+bin/
+pkg/
+src/*
+bin/*
+pkg/*
