@@ -19,14 +19,11 @@ I don't like config files for command line tools, it seems somehow cluncky and l
 
 ***ggistToken="$the token you created"***
 ***ggistUser="$your github account name"***
-***ggistPrompt="[Y|N]"*** # 'N' to skip prompting for "ready to paste"
 
-I'll be adding a few others over time like don't prompt before pulling fro paste buffer, alternative gist server, etc. I personally use my .bashrc file to manage all my environment so in it I have the following:
 
 ```
 export ggistToken="$the token you created"
 export ggistUser="$your github account name"
-export ggistPrompt='N'
 ```
 
 ### Installing
@@ -36,7 +33,7 @@ export ggistPrompt='N'
 git clone https://github.com/gogosphere/ggist.git
 cd ggist
 (make sure your GOPATH is working)
-go get -v
+go get -d
 ... wait for packages to get done ...
 go run ./main.go 
 ```
@@ -46,9 +43,7 @@ go run ./main.go
 Not much to it, go to releases ([https://github.com/gogosphere/ggist/releases]()) and download the latest binary that matches your operating system (Only Darwin at the moment).  No switches are required to be used for this to run.  If you exec ggist without any switches it will show a list of all your gists.
 
 ```
-type to pointer
-Pull: https://gist.github.com/2c34410ac37d9f1b97fafa0449cb538d.git
-
+prompt$ ggist
 generate hash from string, golang
 Pull: https://gist.github.com/f804f3a832dd45d647006f2bc907f84b.git
 
@@ -57,30 +52,27 @@ Pull: https://gist.github.com/83536cdb7e7e8b45f3b315c45c500d03.git
 
 ```
 
-If you exev ggist with the -s switch you can send any combination of the other switches, other wise ggist will use default descrptions and a hash-generated filename which you can change at you leasure in the gist UI at github.
+To send a gist, select the data you wish to transmit and copy it to your machines clipboard.  [CMD-C]  If you either [-s]et or [-m]atch you must pass the [-d]escription followed by either the description or summary of your gist or an explict match word to search for.
 
 ```
-ggists whancock$ ggist -h
+ggist -h
 Usage: [parameter] command
 -h, --help                   Show this help
--s, --send                   send gist
--p, --public                 send to PUBLIC gist, default is PRIVATE
+-s, --set                    send gist (exclusive)
+-g, --get                    get gist and display (exclusive) [the default option if no swtiches are specified]
+-m, --match                  get gist and display
+-v, --debug                  debuging output
 -d, --description=VAL        Twitterish length description of your gist
--f, --file=VAL               Filename, this will be the filename if cloned
--v, --version                Print version and exit
 ```
 
 ### Here's the greatest part!
-IT PULLS FROM YOUR SYSTEM CLIPBOARD!!
 
 ```
-ggists whancock$  ggist -s
-Is your clipboard ready? Press [ENTER] when ready to send..
+ggists whancock$  ggist -s -d "this is a summary of the gist which I can search on later"
 URL: https://gist.github.com/1ffce1097e4f4d5db326a55dea042577.git
 ```
 
-Again, other switches for (-d)esription (-f)ilename and (-p)rivate are not required but you can use them in any combination if you wish to save time later.  The app defaults to a private gist but sending ***ggist -s -p*** will send your gist to the public side for sharing.  When the command completes it will return the clone URL which is perfectly suitable for sharing (as long as you set the gist to public).
-
+When the command completes it will return the clone URL which is perfectly suitable for sharing (as long as you set the gist to public).
 
 
 ## Running the tests
