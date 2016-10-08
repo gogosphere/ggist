@@ -1,5 +1,3 @@
-
-[godoc](https://godoc.org/github.com/gogosphere/ggist)
 [![GoDoc](https://godoc.org/github.com/gogosphere/ggist?status.svg)](https://godoc.org/github.com/gogosphere/ggist)
 
 # GGist
@@ -106,3 +104,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Not getting what I want out of things
 * iMAC 27"
 
+[godoc](https://godoc.org/github.com/gogosphere/ggist)
