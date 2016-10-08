@@ -1,6 +1,5 @@
 
-[godoc](https://godoc.org/github.com/gogosphere/ggistlib)
-# I refactored everything so I need to update the dox still
+[godoc](https://godoc.org/github.com/gogosphere/ggist)
 
 # GGist
 I was constantly on the lookout for places to save code snippets in a tool that was not meant to be a catch all.  A place that could do some light syntax highlighting.  I tried Evernote (love it for general catch all notes), I tried OneNote (I don't love it), and various other things like Codebox, Geeknote, etc.  I know there had been gist clis written and they are handy enough but I wanted something that was fast, required little to no switches and arg and gets out of its own way.  
